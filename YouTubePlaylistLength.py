@@ -13,17 +13,15 @@ minutes = 0
 seconds = 0
 
 timestamps = soup.find_all('span', limit=None)
-durations = []
+''' durations = []
 
-for x in timestamps:
+for x in timestamps:       # inspection needed for long videos
     if ':' in x.text:
         if 7 >= len(x.text) >= 4:
             durations.append(x.text)
-print(durations)
+print(durations) '''
 
-
-
-'''durations = []
+durations = []
 
 
 for x in timestamps:
@@ -54,4 +52,4 @@ full_hours = full_seconds//3600
 full_minutes = (full_seconds - (3600*full_hours))//60
 full_seconds = (full_seconds - (3600*full_hours) - (full_minutes*60))
 
-print(f'Total Duration of the Playlist is {full_hours} hours, {full_minutes} minutes and {full_seconds} seconds') '''
+print(f'Total Duration of the Playlist is {full_hours} hours, {full_minutes} minutes and {full_seconds} seconds')
